@@ -1,0 +1,42 @@
+label {
+	background-color: black;
+	color: white;
+}
+label:hover {
+	cursor: pointer;
+}
+
+div#optshell div#choiceDivNum0:hover{
+	background-color: pink;
+}
+div#optshell div#choiceDivNum0 div#choiceDivNum1:hover{
+	background-color: blue;
+}
+div#optshell div#choiceDivNum0 div#choiceDivNum1 div#choiceDivNum2:hover{
+	background-color: purple;
+}
+div#optshell div#choiceDivNum0 div#choiceDivNum1 div#choiceDivNum2 div#choiceDivNum3:hover{
+	background-color: orange;
+}
+div#optshell div#choiceDivNum0 div#choiceDivNum1 div#choiceDivNum2 div#choiceDivNum3 div#choiceDivNum4:hover{
+	background-color: green;
+}
+
+div#optshell div#choiceDivNum0.clicked{
+	background-color: pink;
+}
+div#optshell div#choiceDivNum0 div#choiceDivNum1.clicked{
+	background-color: blue;
+}
+div#optshell div#choiceDivNum0 div#choiceDivNum1 div#choiceDivNum2.clicked{
+	background-color: purple;
+}
+div#optshell div#choiceDivNum0 div#choiceDivNum1 div#choiceDivNum2 div#choiceDivNum3.clicked{
+	background-color: orange;
+}
+div#optshell div#choiceDivNum0 div#choiceDivNum1 div#choiceDivNum2 div#choiceDivNum3 div#choiceDivNum4.clicked{
+	background-color: green;
+}
+div#optshell div#choiceDivNum0 div#choiceDivNum1 div#choiceDivNum2 div#choiceDivNum3 div#choiceDivNum4.clicked{
+	background-color: green;
+}
