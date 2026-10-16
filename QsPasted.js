@@ -1,4 +1,4 @@
-const qs =
+const qsP =
 ["People depend on each other...",
 "A person's choices about their own health and life are ultimately...",
 "Violent crime is primarily caused by...",
@@ -68,7 +68,7 @@ const qs =
 "People care about current events...",
 "The best of us love their..."];
 
-const csList = 
+const csListP = 
 [["Naturally and automatically","For mutual benefit and solace","On a case by case basis","When alternatives don't exist","Out of learned helplessness"],
 ["Everyone's concern, since we're all bound together","The concern of friends and family","Their own concern in most cases","Theirs to make, full stop","Theirs to make, and no one else's to question"],
 ["Material deprivation","Being socially outcast","Unstable upbringing","Lack of judgement","Personal criminality"],
@@ -138,7 +138,7 @@ const csList =
 ["Because those around them do","As an extension of group identity","As citizens and members of society","As lives sharing the same world","Because everything affects everything"],
 ["Loved ones","Communities","People","Species","Universe"]];
 
-const wCultivation= 
+const wCultivationP= 
 [["2","1","0","-1","-2"],
 ["2","1","0","-1","-2"],
 ["2","1","0","-1","-2"],
@@ -208,7 +208,7 @@ const wCultivation=
 ["0","0","0","0","0"],
 ["-1.2","-0.6","0","0.6","1.2"]];
 
-const wProduction= 
+const wProductionP= 
 [["0","0","0","0","0"],
 ["0","0","0","0","0"],
 ["0","0","0","0","0"],
@@ -278,7 +278,7 @@ const wProduction=
 ["0","0","0","0","0"],
 ["0","0","0","0","0"]];
 
-const wFunction= 
+const wFunctionP= 
 [["0","0","0","0","0"],
 ["0","0","0","0","0"],
 ["2","1","0","-1","-2"],
@@ -348,7 +348,7 @@ const wFunction=
 ["0","0","0","0","0"],
 ["0","0","0","0","0"]];
 
-const wDirection= 
+const wDirectionP= 
 [["0","0","0","0","0"],
 ["0","0","0","0","0"],
 ["0","0","0","0","0"],
@@ -418,7 +418,7 @@ const wDirection=
 ["0","0","0","0","0"],
 ["0","0","0","0","0"]];
 
-const wDreaming= 
+const wDreamingP= 
 [["0","0","0","0","0"],
 ["0","0","0","0","0"],
 ["0","0","0","0","0"],
@@ -488,7 +488,7 @@ const wDreaming=
 ["0","0","0","0","0"],
 ["0","0","0","0","0"]];
 
-const wBehaving= 
+const wBehavingP= 
 [["0","0","0","0","0"],
 ["0","0","0","0","0"],
 ["0","0","0","0","0"],
@@ -558,7 +558,7 @@ const wBehaving=
 ["0","0","0","0","0"],
 ["0","0","0","0","0"]];
 
-const wStriving= 
+const wStrivingP= 
 [["0","0","0","0","0"],
 ["0","0","0","0","0"],
 ["0","0","0","0","0"],
@@ -628,7 +628,7 @@ const wStriving=
 ["0","0","0","0","0"],
 ["0","0","0","0","0"]];
 
-const wRisking= 
+const wRiskingP= 
 [["0","0","0","0","0"],
 ["0","0","0","0","0"],
 ["0","0","0","0","0"],
@@ -698,7 +698,7 @@ const wRisking=
 ["0","0","0","0","0"],
 ["0","0","0","0","0"]];
 
-const wCohering= 
+const wCoheringP= 
 [["0","0","0","0","0"],
 ["0","0","0","0","0"],
 ["0","0","0","0","0"],
@@ -768,7 +768,7 @@ const wCohering=
 ["0","0","0","0","0"],
 ["0","0","0","0","0"]];
 
-const wRecruiting= 
+const wRecruitingP= 
 [["0","0","0","0","0"],
 ["0","0","0","0","0"],
 ["0","0","0","0","0"],
@@ -838,7 +838,7 @@ const wRecruiting=
 ["0","0","0","0","0"],
 ["0","0","0","0","0"]];
 
-const wPursuing= 
+const wPursuingP= 
 [["0","0","0","0","0"],
 ["0","0","0","0","0"],
 ["0","0","0","0","0"],
@@ -908,7 +908,7 @@ const wPursuing=
 ["0","0","0","0","0"],
 ["0","0","0","0","0"]];
 
-const wReviewing= 
+const wReviewingP= 
 [["0","0","0","0","0"],
 ["0","0","0","0","0"],
 ["0","0","0","0","0"],
@@ -978,7 +978,7 @@ const wReviewing=
 ["0","0","0","0","0"],
 ["0","0","0","0","0"]];
 
-const wMandate= 
+const wMandateP= 
 [["0","0","0","0","0"],
 ["0","0","0","0","0"],
 ["0","0","0","0","0"],
@@ -1048,7 +1048,7 @@ const wMandate=
 ["0","0","0","0","0"],
 ["0","0","0","0","0"]];
 
-const wProgram= 
+const wProgramP= 
 [["0","0","0","0","0"],
 ["0","0","0","0","0"],
 ["0","0","0","0","0"],
@@ -1118,7 +1118,7 @@ const wProgram=
 ["0","0","0","0","0"],
 ["0","0","0","0","0"]];
 
-const wTime= 
+const wTimeP= 
 [["0","0","0","0","0"],
 ["0","0","0","0","0"],
 ["0","0","0","0","0"],
@@ -1188,7 +1188,7 @@ const wTime=
 ["0","0","0","0","0"],
 ["0","0","0","0","0"]];
 
-const wSpace= 
+const wSpaceP= 
 [["0","0","0","0","0"],
 ["0","0","0","0","0"],
 ["0","0","0","0","0"],

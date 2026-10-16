@@ -22,23 +22,36 @@ div#optshell div#choiceDivNum0 div#choiceDivNum1 div#choiceDivNum2 div#choiceDiv
 	background-color: green;
 }*/
 
-div#optshell div#choiceDivNum4:hover,
+
+
 div#optshell div#choiceDivNum4.active{
+	background-color: #777777;
+}
+div#optshell div#choiceDivNum4 div#choiceDivNum3.active{
+	background-color: #999999;
+}
+div#optshell div#choiceDivNum4 div#choiceDivNum3 div#choiceDivNum2.active{
+	background-color: #a1a1a1;
+}
+div#optshell div#choiceDivNum4 div#choiceDivNum3 div#choiceDivNum2 div#choiceDivNum1.active{
+	background-color: #d6d6d6;
+}
+div#optshell div#choiceDivNum4 div#choiceDivNum3 div#choiceDivNum2 div#choiceDivNum1 div#choiceDivNum0.active{
+	background-color: #e1e1e1;
+}
+
+div#optshell div#choiceDivNum4:hover{
 	background-color: pink;
 }
-div#optshell div#choiceDivNum4 div#choiceDivNum3:hover,
-div#optshell div#choiceDivNum4 div#choiceDivNum3.active{
+div#optshell div#choiceDivNum4 div#choiceDivNum3:hover{
 	background-color: blue;
 }
-div#optshell div#choiceDivNum4 div#choiceDivNum3 div#choiceDivNum2:hover,
-div#optshell div#choiceDivNum4 div#choiceDivNum3 div#choiceDivNum2.active{
+div#optshell div#choiceDivNum4 div#choiceDivNum3 div#choiceDivNum2:hover{
 	background-color: purple;
 }
-div#optshell div#choiceDivNum4 div#choiceDivNum3 div#choiceDivNum2 div#choiceDivNum1:hover,
-div#optshell div#choiceDivNum4 div#choiceDivNum3 div#choiceDivNum2 div#choiceDivNum1.active{
+div#optshell div#choiceDivNum4 div#choiceDivNum3 div#choiceDivNum2 div#choiceDivNum1:hover{
 	background-color: orange;
 }
-div#optshell div#choiceDivNum4 div#choiceDivNum3 div#choiceDivNum2 div#choiceDivNum1 div#choiceDivNum0:hover,
-div#optshell div#choiceDivNum4 div#choiceDivNum3 div#choiceDivNum2 div#choiceDivNum1 div#choiceDivNum0.active{
+div#optshell div#choiceDivNum4 div#choiceDivNum3 div#choiceDivNum2 div#choiceDivNum1 div#choiceDivNum0:hover{
 	background-color: green;
 }

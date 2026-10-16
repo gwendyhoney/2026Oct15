@@ -1,3 +1,24 @@
+let shellsList = shellsListP;
+let qs = qsP;
+let csList = csListP;
+let wCultivation = wCultivationP;
+let wProduction = wProductionP;
+let wFunction = wFunctionP;
+let wDirection = wDirectionP;
+let wDreaming = wDreamingP;
+let wBehaving = wBehavingP;
+let wStriving = wStrivingP;
+let wRisking = wRiskingP;
+let wCohering = wCoheringP;
+let wRecruiting = wRecruitingP;
+let wPursuing = wPursuingP;
+let wReviewing = wReviewingP;
+let wMandate = wMandateP;
+let wProgram = wProgramP;
+let wTime = wTimeP;
+let wSpace = wSpaceP;
+
+
 let currQ = 0;
 let cCultivation = 0;
 let cProduction = 0;
@@ -46,12 +67,6 @@ function loadQues() {
         opt.appendChild(choicesdiv);
 	}
 	if (shellsList.includes(currQ+1)) {
-		// optshell.appendChild(document.getElementById("choiceDivNum0"));
-		// document.getElementById("choiceDivNum0").appendChild(document.getElementById("choiceDivNum1"));
-		// document.getElementById("choiceDivNum1").appendChild(document.getElementById("choiceDivNum2"));
-		// document.getElementById("choiceDivNum2").appendChild(document.getElementById("choiceDivNum3"));
-		// document.getElementById("choiceDivNum3").appendChild(document.getElementById("choiceDivNum4"));
-
 		optshell.append(document.getElementById("choiceDivNum4"));
 		document.getElementById("choiceDivNum4").prepend(document.getElementById("choiceDivNum3"));
 		document.getElementById("choiceDivNum3").prepend(document.getElementById("choiceDivNum2"));
@@ -96,28 +111,6 @@ function loadQues() {
 		}
 
 		opt.innerHTML = "";
-	} else {
-		if (makeRand) {
-			opt.innerHTML = "";
-			var ranNums = shuffle([0,1,2,3,4]);
-			for (var i = 0; i < csList[currQ].length; i++) {
-				randI = ranNums[i];
-				let option = csList[currQ][randI]
-				const choicesdiv = document.createElement("div");
-				choicesdiv.id = "choiceDivNum" + randI;
-		        const choice = document.createElement("input");
-		        const choiceLabel = document.createElement("label");
-		        choice.type = "radio";
-		        choice.name = "answer";
-		        choice.value = randI;
-		        choice.id = "choiceNum" + randI;
-		        choiceLabel.htmlFor = "choiceNum" + randI;
-		        choiceLabel.textContent = option;
-		        choicesdiv.appendChild(choice);
-		        choicesdiv.appendChild(choiceLabel);
-		        opt.appendChild(choicesdiv);
-			}
-		}
 	}
 }
 function shuffle(array) {
@@ -140,8 +133,17 @@ function shuffle(array) {
 }
 
 function startQuiz() {
-	loadQues()
+	//randQs();
+	loadQues();
 	document.getElementById("startbtn").remove();
+	document.getElementById("startRandbtn").remove();
+	document.getElementById("submitbtn").style.display="inline-block";
+}
+function startQuizRandver() {
+	randQs();
+	loadQues();
+	document.getElementById("startbtn").remove();
+	document.getElementById("startRandbtn").remove();
 	document.getElementById("submitbtn").style.display="inline-block";
 }
 
@@ -229,4 +231,50 @@ function printStats() {
 	score14.innerText = "TIME: " + cTime.toFixed(fixedDec);
 	const score15 = document.getElementById('score15')
 	score15.innerText = "SPACE: " + cSpace.toFixed(fixedDec);
+}
+
+function randQs() {
+	// qs, csList, 
+	// wCultivation/wProduction/wFunction/wDirection
+	// wDreaming/wBehaving/wStriving/wRisking
+	// wCohering/wRecruiting/wPursuing/wReviewing
+	// wMandate/wProgram/wTime/wSpace
+	// shellsList
+
+	let newOrder = Array.from({length: qs.length}, (e, i)=> i);
+	newOrder = shuffle(newOrder);
+	console.log("New question order: ");
+	console.log(newOrder);
+
+	var tempShell = []
+	for (var i = 0; i < shellsList.length; i++) {
+		tempShell.push(newOrder.indexOf(shellsList[i] - 1) + 1);
+	}
+	shellsList = tempShell;
+	qs = reorderArrayByIndexes(qs, newOrder);
+	csList = reorderArrayByIndexes(csList, newOrder);
+	wCultivation = reorderArrayByIndexes(wCultivation, newOrder);
+	wProduction = reorderArrayByIndexes(wProduction, newOrder);
+	wFunction = reorderArrayByIndexes(wFunction, newOrder);
+	wDirection = reorderArrayByIndexes(wDirection, newOrder);
+	wDreaming = reorderArrayByIndexes(wDreaming, newOrder);
+	wBehaving = reorderArrayByIndexes(wBehaving, newOrder);
+	wStriving = reorderArrayByIndexes(wStriving, newOrder);
+	wRisking = reorderArrayByIndexes(wRisking, newOrder);
+	wCohering = reorderArrayByIndexes(wCohering, newOrder);
+	wRecruiting = reorderArrayByIndexes(wRecruiting, newOrder);
+	wPursuing = reorderArrayByIndexes(wPursuing, newOrder);
+	wReviewing = reorderArrayByIndexes(wReviewing, newOrder);
+	wMandate = reorderArrayByIndexes(wMandate, newOrder);
+	wProgram = reorderArrayByIndexes(wProgram, newOrder);
+	wTime = reorderArrayByIndexes(wTime, newOrder);
+	wSpace = reorderArrayByIndexes(wSpace, newOrder);
+
+}
+function reorderArrayByIndexes(originalArray, indexesArray) {
+    var tempArr = [];
+    for (var i = 0; i < indexesArray.length; i++) {
+    	tempArr.push(originalArray[indexesArray[i]])
+    }
+    return tempArr;
 }
