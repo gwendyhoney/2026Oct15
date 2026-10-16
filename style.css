@@ -6,7 +6,7 @@ label:hover {
 	cursor: pointer;
 }
 
-div#optshell div#choiceDivNum0:hover{
+/*div#optshell div#choiceDivNum0:hover{
 	background-color: pink;
 }
 div#optshell div#choiceDivNum0 div#choiceDivNum1:hover{
@@ -20,23 +20,25 @@ div#optshell div#choiceDivNum0 div#choiceDivNum1 div#choiceDivNum2 div#choiceDiv
 }
 div#optshell div#choiceDivNum0 div#choiceDivNum1 div#choiceDivNum2 div#choiceDivNum3 div#choiceDivNum4:hover{
 	background-color: green;
-}
+}*/
 
-div#optshell div#choiceDivNum0.clicked{
+div#optshell div#choiceDivNum4:hover,
+div#optshell div#choiceDivNum4.active{
 	background-color: pink;
 }
-div#optshell div#choiceDivNum0 div#choiceDivNum1.clicked{
+div#optshell div#choiceDivNum4 div#choiceDivNum3:hover,
+div#optshell div#choiceDivNum4 div#choiceDivNum3.active{
 	background-color: blue;
 }
-div#optshell div#choiceDivNum0 div#choiceDivNum1 div#choiceDivNum2.clicked{
+div#optshell div#choiceDivNum4 div#choiceDivNum3 div#choiceDivNum2:hover,
+div#optshell div#choiceDivNum4 div#choiceDivNum3 div#choiceDivNum2.active{
 	background-color: purple;
 }
-div#optshell div#choiceDivNum0 div#choiceDivNum1 div#choiceDivNum2 div#choiceDivNum3.clicked{
+div#optshell div#choiceDivNum4 div#choiceDivNum3 div#choiceDivNum2 div#choiceDivNum1:hover,
+div#optshell div#choiceDivNum4 div#choiceDivNum3 div#choiceDivNum2 div#choiceDivNum1.active{
 	background-color: orange;
 }
-div#optshell div#choiceDivNum0 div#choiceDivNum1 div#choiceDivNum2 div#choiceDivNum3 div#choiceDivNum4.clicked{
-	background-color: green;
-}
-div#optshell div#choiceDivNum0 div#choiceDivNum1 div#choiceDivNum2 div#choiceDivNum3 div#choiceDivNum4.clicked{
+div#optshell div#choiceDivNum4 div#choiceDivNum3 div#choiceDivNum2 div#choiceDivNum1 div#choiceDivNum0:hover,
+div#optshell div#choiceDivNum4 div#choiceDivNum3 div#choiceDivNum2 div#choiceDivNum1 div#choiceDivNum0.active{
 	background-color: green;
 }

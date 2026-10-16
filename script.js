@@ -15,6 +15,7 @@ let cMandate = 0;
 let cProgram = 0;
 let cTime = 0;
 let cSpace = 0;
+let makeRand = 1;
 
 function loadQues() {
 	const qNum = document.getElementById('qNum')
@@ -45,13 +46,97 @@ function loadQues() {
         opt.appendChild(choicesdiv);
 	}
 	if (shellsList.includes(currQ+1)) {
-		optshell.appendChild(document.getElementById("choiceDivNum0"));
-		document.getElementById("choiceDivNum0").appendChild(document.getElementById("choiceDivNum1"));
-		document.getElementById("choiceDivNum1").appendChild(document.getElementById("choiceDivNum2"));
-		document.getElementById("choiceDivNum2").appendChild(document.getElementById("choiceDivNum3"));
-		document.getElementById("choiceDivNum3").appendChild(document.getElementById("choiceDivNum4"));
+		// optshell.appendChild(document.getElementById("choiceDivNum0"));
+		// document.getElementById("choiceDivNum0").appendChild(document.getElementById("choiceDivNum1"));
+		// document.getElementById("choiceDivNum1").appendChild(document.getElementById("choiceDivNum2"));
+		// document.getElementById("choiceDivNum2").appendChild(document.getElementById("choiceDivNum3"));
+		// document.getElementById("choiceDivNum3").appendChild(document.getElementById("choiceDivNum4"));
+
+		optshell.append(document.getElementById("choiceDivNum4"));
+		document.getElementById("choiceDivNum4").prepend(document.getElementById("choiceDivNum3"));
+		document.getElementById("choiceDivNum3").prepend(document.getElementById("choiceDivNum2"));
+		document.getElementById("choiceDivNum2").prepend(document.getElementById("choiceDivNum1"));
+		document.getElementById("choiceDivNum1").prepend(document.getElementById("choiceDivNum0"));
+		
+
+		document.getElementById("choiceNum0").onclick = function() {
+    		document.getElementById("choiceDivNum0").classList.add('active');
+    		document.getElementById("choiceDivNum1").classList.add('active');
+    		document.getElementById("choiceDivNum2").classList.add('active');
+    		document.getElementById("choiceDivNum3").classList.add('active');
+    		document.getElementById("choiceDivNum4").classList.add('active');
+		}
+		document.getElementById("choiceNum1").onclick = function() {
+    		document.getElementById("choiceDivNum0").classList.remove('active');
+    		document.getElementById("choiceDivNum1").classList.add('active');
+    		document.getElementById("choiceDivNum2").classList.add('active');
+    		document.getElementById("choiceDivNum3").classList.add('active');
+    		document.getElementById("choiceDivNum4").classList.add('active');
+		}
+		document.getElementById("choiceNum2").onclick = function() {
+    		document.getElementById("choiceDivNum0").classList.remove('active');
+    		document.getElementById("choiceDivNum1").classList.remove('active');
+    		document.getElementById("choiceDivNum2").classList.add('active');
+    		document.getElementById("choiceDivNum3").classList.add('active');
+    		document.getElementById("choiceDivNum4").classList.add('active');
+		}
+		document.getElementById("choiceNum3").onclick = function() {
+    		document.getElementById("choiceDivNum0").classList.remove('active');
+    		document.getElementById("choiceDivNum1").classList.remove('active');
+    		document.getElementById("choiceDivNum2").classList.remove('active');
+    		document.getElementById("choiceDivNum3").classList.add('active');
+    		document.getElementById("choiceDivNum4").classList.add('active');
+		}
+		document.getElementById("choiceNum4").onclick = function() {
+    		document.getElementById("choiceDivNum0").classList.remove('active');
+    		document.getElementById("choiceDivNum1").classList.remove('active');
+    		document.getElementById("choiceDivNum2").classList.remove('active');
+    		document.getElementById("choiceDivNum3").classList.remove('active');
+    		document.getElementById("choiceDivNum4").classList.add('active');
+		}
+
 		opt.innerHTML = "";
+	} else {
+		if (makeRand) {
+			opt.innerHTML = "";
+			var ranNums = shuffle([0,1,2,3,4]);
+			for (var i = 0; i < csList[currQ].length; i++) {
+				randI = ranNums[i];
+				let option = csList[currQ][randI]
+				const choicesdiv = document.createElement("div");
+				choicesdiv.id = "choiceDivNum" + randI;
+		        const choice = document.createElement("input");
+		        const choiceLabel = document.createElement("label");
+		        choice.type = "radio";
+		        choice.name = "answer";
+		        choice.value = randI;
+		        choice.id = "choiceNum" + randI;
+		        choiceLabel.htmlFor = "choiceNum" + randI;
+		        choiceLabel.textContent = option;
+		        choicesdiv.appendChild(choice);
+		        choicesdiv.appendChild(choiceLabel);
+		        opt.appendChild(choicesdiv);
+			}
+		}
 	}
+}
+function shuffle(array) {
+    var i = array.length,
+        j = 0,
+        temp;
+
+    while (i--) {
+
+        j = Math.floor(Math.random() * (i+1));
+
+        // swap randomly chosen element with current element
+        temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+
+    }
+
+    return array;
 }
 
 function startQuiz() {
@@ -108,39 +193,40 @@ function checkAns() {
 }
 
 function printStats() {
+	const fixedDec = 2;
 	const score0 = document.getElementById('score0')
-	score0.innerText = "CULTIVATION: " + cCultivation;
+	score0.innerText = "CULTIVATION: " + cCultivation.toFixed(fixedDec);
 	const score1 = document.getElementById('score1')
-	score1.innerText = "PRODUCTION: " + cProduction;
+	score1.innerText = "PRODUCTION: " + cProduction.toFixed(fixedDec);
 	const score2 = document.getElementById('score2')
-	score2.innerText = "FUNCTION: " + cFunction;
+	score2.innerText = "FUNCTION: " + cFunction.toFixed(fixedDec);
 	const score3 = document.getElementById('score3')
-	score3.innerText = "DIRECTION: " + cDirection;
+	score3.innerText = "DIRECTION: " + cDirection.toFixed(fixedDec);
 
 	const score4 = document.getElementById('score4')
-	score4.innerText = "DREAMING: " + cDreaming;
+	score4.innerText = "DREAMING: " + cDreaming.toFixed(fixedDec);
 	const score5 = document.getElementById('score5')
-	score5.innerText = "BEHAVING: " + cBehaving;
+	score5.innerText = "BEHAVING: " + cBehaving.toFixed(fixedDec);
 	const score6 = document.getElementById('score6')
-	score6.innerText = "STRIVING: " + cStriving;
+	score6.innerText = "STRIVING: " + cStriving.toFixed(fixedDec);
 	const score7 = document.getElementById('score7')
-	score7.innerText = "RISKING: " + cRisking;
+	score7.innerText = "RISKING: " + cRisking.toFixed(fixedDec);
 
 	const score8 = document.getElementById('score8')
-	score8.innerText = "COHERING: " + cCohering;
+	score8.innerText = "COHERING: " + cCohering.toFixed(fixedDec);
 	const score9 = document.getElementById('score9')
-	score9.innerText = "RECRUITING: " + cRecruiting;
+	score9.innerText = "RECRUITING: " + cRecruiting.toFixed(fixedDec);
 	const score10 = document.getElementById('score10')
-	score10.innerText = "PURSUING: " + cPursing;
+	score10.innerText = "PURSUING: " + cPursing.toFixed(fixedDec);
 	const score11 = document.getElementById('score11')
-	score11.innerText = "REVIEWING: " + cReviewing;
+	score11.innerText = "REVIEWING: " + cReviewing.toFixed(fixedDec);
 
 	const score12 = document.getElementById('score12')
-	score12.innerText = "MANDATE: " + cMandate;
+	score12.innerText = "MANDATE: " + cMandate.toFixed(fixedDec);
 	const score13 = document.getElementById('score13')
-	score13.innerText = "PROGRAM: " + cProgram;
+	score13.innerText = "PROGRAM: " + cProgram.toFixed(fixedDec);
 	const score14 = document.getElementById('score14')
-	score14.innerText = "TIME: " + cTime;
+	score14.innerText = "TIME: " + cTime.toFixed(fixedDec);
 	const score15 = document.getElementById('score15')
-	score15.innerText = "SPACE: " + cSpace;
+	score15.innerText = "SPACE: " + cSpace.toFixed(fixedDec);
 }
