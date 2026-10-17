@@ -1,3 +1,34 @@
+@font-face {
+	font-family: chalktastic;
+	src: url("chalktastic-font/Chalktastic-r78L.ttf");
+}
+@font-face {
+  font-family: chalktastic;
+  src: url("chalktastic-font/ChalktasticItalic-pEwZ.ttf");
+  font-weight: italic;
+}
+@font-face {
+	font-family: Knewave;
+	src: url("Knewave/Knewave-Regular.ttf");
+}
+
+body {
+	font-family: Knewave;
+	color: white;
+	font-size: 20px;
+	background-image: url("TDU_Quiz_Background.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+
+}
+
+button {
+	font-family: chalktastic;
+	color: white;
+	font-size: 20px;
+	background: none;
+}
+
 label {
 	background-color: black;
 	color: white;
@@ -5,24 +36,6 @@ label {
 label:hover {
 	cursor: pointer;
 }
-
-/*div#optshell div#choiceDivNum0:hover{
-	background-color: pink;
-}
-div#optshell div#choiceDivNum0 div#choiceDivNum1:hover{
-	background-color: blue;
-}
-div#optshell div#choiceDivNum0 div#choiceDivNum1 div#choiceDivNum2:hover{
-	background-color: purple;
-}
-div#optshell div#choiceDivNum0 div#choiceDivNum1 div#choiceDivNum2 div#choiceDivNum3:hover{
-	background-color: orange;
-}
-div#optshell div#choiceDivNum0 div#choiceDivNum1 div#choiceDivNum2 div#choiceDivNum3 div#choiceDivNum4:hover{
-	background-color: green;
-}*/
-
-
 
 div#optshell div#choiceDivNum4.active{
 	background-color: #777777;

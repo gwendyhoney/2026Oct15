@@ -38,12 +38,14 @@ let cTime = 0;
 let cSpace = 0;
 let makeRand = 1;
 
+let allAns = [];
+
 function loadQues() {
 	const qNum = document.getElementById('qNum')
 	const ques = document.getElementById("ques");
 	const opt = document.getElementById("opt");
 	const optshell = document.getElementById("optshell");
-	qNum.innerText = currQ + 1;
+	qNum.innerText = "Question " + (currQ + 1) + "/" + qs.length;
 	let currentQuestion = qs[currQ];
 	ques.innerText = currentQuestion;
 	
@@ -133,11 +135,11 @@ function shuffle(array) {
 }
 
 function startQuiz() {
-	//randQs();
 	loadQues();
 	document.getElementById("startbtn").remove();
 	document.getElementById("startRandbtn").remove();
 	document.getElementById("submitbtn").style.display="inline-block";
+	document.getElementById("backbtn").style.display="inline-block";
 }
 function startQuizRandver() {
 	randQs();
@@ -145,6 +147,7 @@ function startQuizRandver() {
 	document.getElementById("startbtn").remove();
 	document.getElementById("startRandbtn").remove();
 	document.getElementById("submitbtn").style.display="inline-block";
+	document.getElementById("backbtn").style.display="inline-block";
 }
 
 function nextQuestion() {
@@ -158,10 +161,37 @@ function nextQuestion() {
         document.getElementById("optshell").remove();
         document.getElementById("ques").remove();
         document.getElementById("submitbtn").remove();
+        document.getElementById("backbtn").remove();
         document.getElementById("qNum").remove();
         const resPg = document.getElementById("resPg");
         resPg.innerHTML = "<h1>Results:</h1>";
     }
+}
+function goBack() {
+	if (currQ == 0) {
+		window.location.reload();
+	} else {
+		cCultivation -= allAns.at(-1)[0];
+		cProduction -= allAns.at(-1)[1];
+		cFunction -= allAns.at(-1)[2];
+		cDirection -= allAns.at(-1)[3];
+		cDreaming -= allAns.at(-1)[4];
+		cBehaving -= allAns.at(-1)[5];
+		cStriving -= allAns.at(-1)[6];
+		cRisking -= allAns.at(-1)[7];
+		cCohering -= allAns.at(-1)[8];
+		cRecruiting -= allAns.at(-1)[9];
+		cPursing -= allAns.at(-1)[10];
+		cReviewing -= allAns.at(-1)[11];
+		cMandate -= allAns.at(-1)[12];
+		cProgram -= allAns.at(-1)[13];
+		cTime -= allAns.at(-1)[14];
+		cSpace -= allAns.at(-1)[15];
+		currQ = currQ - 1;
+		allAns.pop();
+		printStats();
+		loadQues();
+	}
 }
 
 function checkAns() {
@@ -186,6 +216,25 @@ function checkAns() {
 		cProgram += Number(wProgram[currQ][ansIndex]);
 		cTime += Number(wTime[currQ][ansIndex]);
 		cSpace += Number(wSpace[currQ][ansIndex]);
+
+		var tempAns = [Number(wCultivation[currQ][ansIndex]),
+				Number(wProduction[currQ][ansIndex]),
+				Number(wFunction[currQ][ansIndex]),
+				Number(wDirection[currQ][ansIndex]),
+				Number(wDreaming[currQ][ansIndex]),
+				Number(wBehaving[currQ][ansIndex]),
+				Number(wStriving[currQ][ansIndex]),
+				Number(wRisking[currQ][ansIndex]),
+				Number(wCohering[currQ][ansIndex]),
+				Number(wRecruiting[currQ][ansIndex]),
+				Number(wPursuing[currQ][ansIndex]),
+				Number(wReviewing[currQ][ansIndex]),
+				Number(wMandate[currQ][ansIndex]),
+				Number(wProgram[currQ][ansIndex]),
+				Number(wTime[currQ][ansIndex]),
+				Number(wSpace[currQ][ansIndex])];
+		allAns.push(tempAns);
+
 		printStats();
         nextQuestion();
     } else {
