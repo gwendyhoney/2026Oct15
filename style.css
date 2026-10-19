@@ -7,26 +7,60 @@
   src: url("chalktastic-font/ChalktasticItalic-pEwZ.ttf");
   font-weight: italic;
 }
-@font-face {
-	font-family: Knewave;
-	src: url("Knewave/Knewave-Regular.ttf");
-}
 
+.background {
+	position: fixed;
+	inset: 0;
+	overflow: hidden;
+	z-index: -1;
+}
+.background img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: 100% 100%;
+}
 body {
-	font-family: Knewave;
+	font-family: chalktastic;
 	color: white;
 	font-size: 20px;
-	background-image: url("TDU_Quiz_Background.png");
-	background-repeat: no-repeat;
-	background-size: cover;
-
 }
+div.qsflexwrap {
+	display: flex;
+	justify-content: space-around;
+}
+div .qNum {
+	font-size: 4vw;
+	text-align: center;
+	padding-top: 3vw;
+}
+div .question {
+	font-size: 3vw;
+	padding: 1vw;
+}
+div .options, div .optionsShell {
+	font-size: 2vw;
+}
+div .options div {
+	padding: 0.5vw;
+}
+div .scoresPeep {
+	font-size: 1.7vw;
+}
+div .qsDiv {
+	width: 65%;
+	text-align: center;
+}
+
 
 button {
 	font-family: chalktastic;
 	color: white;
-	font-size: 20px;
+	font-size: 3vw;
 	background: none;
+}
+input[type=radio] {
+  opacity: 0;
 }
 
 label {
@@ -35,7 +69,15 @@ label {
 }
 label:hover {
 	cursor: pointer;
+	background-color: gray;
 }
+label:active {
+	background-color: blue;
+}
+input[type='radio']:checked + label {
+	background-color: blue;
+}
+
 
 div#optshell div#choiceDivNum4.active{
 	background-color: #777777;

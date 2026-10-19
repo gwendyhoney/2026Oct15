@@ -45,7 +45,7 @@ function loadQues() {
 	const ques = document.getElementById("ques");
 	const opt = document.getElementById("opt");
 	const optshell = document.getElementById("optshell");
-	qNum.innerText = "Question " + (currQ + 1) + "/" + qs.length;
+	qNum.innerText = "QUESTION " + (currQ + 1) + "/" + qs.length + ":";
 	let currentQuestion = qs[currQ];
 	ques.innerText = currentQuestion;
 	

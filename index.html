@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+  <div class="background">
+  <img src="TDU_Quiz_Background.png" class="background">
     <script src="QsPasted.js"></script>
     <script src="ShellPasted.js"></script>
     <script src="script.js"></script>
@@ -17,34 +19,42 @@
 
     <div>
       <div class="panel">
-        <div class="qNum" id="qNum"></div>
-        <div class="question" id="ques"></div>
-        <div class="options" id="opt"></div>
-        <div class="optionsShell" id="optshell"></div>
-        <button onclick="checkAns()" id="submitbtn" style="display:none">SUBMIT</button>
-        <br>
-        <button onclick="goBack()" id="backbtn" style="display:none">BACK</button>
-        <div class="errorAlert" id="errorAlert"></div>
         <div class="resultsPage" id="resPg"></div>
-        <div class="scoresPeep" id="scoresPeep">
-          <div id="score0"></div>
-          <div id="score1"></div>
-          <div id="score2"></div>
-          <div id="score3"></div>
-          <div id="score4"></div>
-          <div id="score5"></div>
-          <div id="score6"></div>
-          <div id="score7"></div>
-          <div id="score8"></div>
-          <div id="score9"></div>
-          <div id="score10"></div>
-          <div id="score11"></div>
-          <div id="score12"></div>
-          <div id="score13"></div>
-          <div id="score14"></div>
-          <div id="score15"></div>
+
+        <div class="qsflexwrap">
+          <div class="qsDiv" id="qsDiv">
+            <div class="qNum" id="qNum"></div>
+            <div class="question" id="ques"></div>
+            <div class="options" id="opt"></div>
+            <div class="optionsShell" id="optshell"></div>
+            <button onclick="checkAns()" id="submitbtn" style="display:none">SUBMIT</button>
+            <br>
+            <button onclick="goBack()" id="backbtn" style="display:none">BACK</button>
+            <div class="errorAlert" id="errorAlert"></div>
+          </div>
+
+          <div class="scoresPeep" id="scoresPeep">
+            <div id="score0"></div>
+            <div id="score1"></div>
+            <div id="score2"></div>
+            <div id="score3"></div>
+            <div id="score4"></div>
+            <div id="score5"></div>
+            <div id="score6"></div>
+            <div id="score7"></div>
+            <div id="score8"></div>
+            <div id="score9"></div>
+            <div id="score10"></div>
+            <div id="score11"></div>
+            <div id="score12"></div>
+            <div id="score13"></div>
+            <div id="score14"></div>
+            <div id="score15"></div>
+          </div>
         </div>
-    </div>
+  </img>
+  </div>
+  </div>
 
   </body>
 </html>
