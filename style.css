@@ -30,22 +30,22 @@ div.qsflexwrap {
 	justify-content: space-around;
 }
 div .qNum {
-	font-size: 4vw;
+	font-size: 2.5vw;
 	text-align: center;
 	padding-top: 3vw;
 }
 div .question {
-	font-size: 3vw;
+	font-size: 2vw;
 	padding: 1vw;
 }
 div .options, div .optionsShell {
-	font-size: 2vw;
+	font-size: 1.5vw;
 }
 div .options div {
 	padding: 0.5vw;
 }
 div .scoresPeep {
-	font-size: 1.7vw;
+	font-size: 1.5vw;
 }
 div .qsDiv {
 	width: 65%;
@@ -56,7 +56,7 @@ div .qsDiv {
 button {
 	font-family: chalktastic;
 	color: white;
-	font-size: 3vw;
+	font-size: 2vw;
 	background: none;
 }
 input[type=radio] {
