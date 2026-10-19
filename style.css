@@ -1,3 +1,15 @@
+:root {
+	--color0: #FF5D5B;
+	--color0a: #FF5D5B66;
+	--color1: #FF7F00;
+	--color1a: #FF7F0066;
+	--color2: #F6F243;
+	--color2a: #F6F24366;
+	--color3: #51D347;
+	--color3a: #51D34766;
+	--color4: #78A5E3;
+	--color4a: #78A5E366;
+}
 @font-face {
 	font-family: chalktastic;
 	src: url("chalktastic-font/Chalktastic-r78L.ttf");
@@ -60,7 +72,7 @@ button {
 	background: none;
 }
 input[type=radio] {
-  opacity: 0;
+  display: none;
 }
 
 label {
@@ -79,7 +91,7 @@ input[type='radio']:checked + label {
 }
 
 
-div#optshell div#choiceDivNum4.active{
+/*div#optshell div#choiceDivNum4.active{
 	background-color: #777777;
 }
 div#optshell div#choiceDivNum4 div#choiceDivNum3.active{
@@ -110,3 +122,63 @@ div#optshell div#choiceDivNum4 div#choiceDivNum3 div#choiceDivNum2 div#choiceDiv
 div#optshell div#choiceDivNum4 div#choiceDivNum3 div#choiceDivNum2 div#choiceDivNum1 div#choiceDivNum0:hover{
 	background-color: green;
 }
+*/
+
+div#optshell div#choiceDivNum0 {
+	border-color: var(--color0);
+	background-color: var(--color0a);
+	border-style: solid;
+	width: fit-content;
+	justify-self: center;
+	border: 20px solid;
+  border-image-source: url("chalk_border_red.svg");
+  border-image-repeat: repeat;
+  border-image-slice: 38;
+}
+div#optshell div#choiceDivNum1 {
+	border-color: var(--color1);
+	background-color: var(--color1a);
+	border-style: solid;
+	width: fit-content;
+	justify-self: center;
+	border: 20px solid;
+  border-image-source: url("chalk_border_orange.svg");
+  border-image-repeat: repeat;
+  border-image-slice: 38;
+}
+div#optshell div#choiceDivNum2 {
+	border-color: var(--color2);
+	background-color: var(--color2a);
+	border-style: solid;
+	width: fit-content;
+	justify-self: center;
+	border: 20px solid;
+  border-image-source: url("chalk_border_yellow.svg");
+  border-image-repeat: repeat;
+  border-image-slice: 38;
+}
+div#optshell div#choiceDivNum3 {
+	border-color: var(--color3);
+	background-color: var(--color3a);
+	border-style: solid;
+	width: fit-content;
+	justify-self: center;
+	border: 20px solid;
+  border-image-source: url("chalk_border_green.svg");
+  border-image-repeat: repeat;
+  border-image-slice: 38;
+}
+div#optshell div#choiceDivNum4 {
+	border-color: var(--color4);
+	background-color: var(--color4a);
+	border-style: solid;
+	width: fit-content;
+	justify-self: center;
+	border: 20px solid;
+  border-image-source: url("chalk_border_blue.svg");
+  border-image-repeat: repeat;
+  border-image-slice: 38;
+}
+
+
+
