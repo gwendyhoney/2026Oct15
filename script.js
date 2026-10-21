@@ -64,52 +64,87 @@ function loadQues() {
         choice.id = "choiceNum" + i;
         choiceLabel.htmlFor = "choiceNum" + i;
         choiceLabel.textContent = option;
-        choicesdiv.appendChild(choice);
-        choicesdiv.appendChild(choiceLabel);
+
+        // In order for a prettier outline, an inner div wrapper is used
+        const wrapdiv = document.createElement("div");
+        wrapdiv.type = "choiceWrapDiv";
+        wrapdiv.id = "choiceWrapDiv" + i; 
+
+        choicesdiv.appendChild(wrapdiv)
+        wrapdiv.appendChild(choice);
+        wrapdiv.appendChild(choiceLabel);
         opt.appendChild(choicesdiv);
 	}
 	if (shellsList.includes(currQ+1)) {
 		optshell.append(document.getElementById("choiceDivNum4"));
-		document.getElementById("choiceDivNum4").prepend(document.getElementById("choiceDivNum3"));
-		document.getElementById("choiceDivNum3").prepend(document.getElementById("choiceDivNum2"));
-		document.getElementById("choiceDivNum2").prepend(document.getElementById("choiceDivNum1"));
-		document.getElementById("choiceDivNum1").prepend(document.getElementById("choiceDivNum0"));
-		
+		document.getElementById("choiceWrapDiv4").classList.add("optWrap")
+		for (var i = csList[currQ].length - 1; i > 0; i--) {
+			console.log(i);
+			document.getElementById("choiceWrapDiv" + i).prepend(document.getElementById("choiceDivNum" + (i - 1)));
+			document.getElementById("choiceWrapDiv" + i).classList.add("optWrap")
+		}
+		document.getElementById("choiceWrapDiv0").classList.add("optWrap")
 
 		document.getElementById("choiceNum0").onclick = function() {
-    		document.getElementById("choiceDivNum0").classList.add('active');
-    		document.getElementById("choiceDivNum1").classList.add('active');
-    		document.getElementById("choiceDivNum2").classList.add('active');
-    		document.getElementById("choiceDivNum3").classList.add('active');
-    		document.getElementById("choiceDivNum4").classList.add('active');
+			document.getElementById("choiceDivNum0").classList.add('active');
+			document.getElementById("choiceDivNum0").classList.remove('inactive');
+			document.getElementById("choiceWrapDiv0").classList.add('active');
+			for (var i = 0; i < csList[currQ].length; i++) {
+				if (i != 0) {
+					document.getElementById("choiceDivNum" + i).classList.remove('active');
+					document.getElementById("choiceWrapDiv" + i).classList.remove('active');
+					document.getElementById("choiceDivNum" + i).classList.add('inactive');
+				}
+			}
+
 		}
 		document.getElementById("choiceNum1").onclick = function() {
-    		document.getElementById("choiceDivNum0").classList.remove('active');
     		document.getElementById("choiceDivNum1").classList.add('active');
-    		document.getElementById("choiceDivNum2").classList.add('active');
-    		document.getElementById("choiceDivNum3").classList.add('active');
-    		document.getElementById("choiceDivNum4").classList.add('active');
+			document.getElementById("choiceDivNum1").classList.remove('inactive');
+			document.getElementById("choiceWrapDiv1").classList.add('active');
+			for (var i = 0; i < csList[currQ].length; i++) {
+				if (i != 1) {
+					document.getElementById("choiceDivNum" + i).classList.remove('active');
+					document.getElementById("choiceWrapDiv" + i).classList.remove('active');
+					document.getElementById("choiceDivNum" + i).classList.add('inactive');
+				}
+			}
 		}
 		document.getElementById("choiceNum2").onclick = function() {
-    		document.getElementById("choiceDivNum0").classList.remove('active');
-    		document.getElementById("choiceDivNum1").classList.remove('active');
     		document.getElementById("choiceDivNum2").classList.add('active');
-    		document.getElementById("choiceDivNum3").classList.add('active');
-    		document.getElementById("choiceDivNum4").classList.add('active');
+			document.getElementById("choiceDivNum2").classList.remove('inactive');
+			document.getElementById("choiceWrapDiv2").classList.add('active');
+			for (var i = 0; i < csList[currQ].length; i++) {
+				if (i != 2) {
+					document.getElementById("choiceDivNum" + i).classList.remove('active');
+					document.getElementById("choiceWrapDiv" + i).classList.remove('active');
+					document.getElementById("choiceDivNum" + i).classList.add('inactive');
+				}
+			}
 		}
 		document.getElementById("choiceNum3").onclick = function() {
-    		document.getElementById("choiceDivNum0").classList.remove('active');
-    		document.getElementById("choiceDivNum1").classList.remove('active');
-    		document.getElementById("choiceDivNum2").classList.remove('active');
     		document.getElementById("choiceDivNum3").classList.add('active');
-    		document.getElementById("choiceDivNum4").classList.add('active');
+			document.getElementById("choiceDivNum3").classList.remove('inactive');
+			document.getElementById("choiceWrapDiv3").classList.add('active');
+			for (var i = 0; i < csList[currQ].length; i++) {
+				if (i != 3) {
+					document.getElementById("choiceDivNum" + i).classList.remove('active');
+					document.getElementById("choiceWrapDiv" + i).classList.remove('active');
+					document.getElementById("choiceDivNum" + i).classList.add('inactive');
+				}
+			}
 		}
 		document.getElementById("choiceNum4").onclick = function() {
-    		document.getElementById("choiceDivNum0").classList.remove('active');
-    		document.getElementById("choiceDivNum1").classList.remove('active');
-    		document.getElementById("choiceDivNum2").classList.remove('active');
-    		document.getElementById("choiceDivNum3").classList.remove('active');
     		document.getElementById("choiceDivNum4").classList.add('active');
+			document.getElementById("choiceDivNum4").classList.remove('inactive');
+			document.getElementById("choiceWrapDiv4").classList.add('active');
+			for (var i = 0; i < csList[currQ].length; i++) {
+				if (i != 4) {
+					document.getElementById("choiceDivNum" + i).classList.remove('active');
+					document.getElementById("choiceWrapDiv" + i).classList.remove('active');
+					document.getElementById("choiceDivNum" + i).classList.add('inactive');
+				}
+			}
 		}
 
 		opt.innerHTML = "";

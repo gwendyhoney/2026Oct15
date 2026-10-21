@@ -42,22 +42,23 @@ div.qsflexwrap {
 	justify-content: space-around;
 }
 div .qNum {
-	font-size: 2.5vw;
+	font-size: 35px;
 	text-align: center;
-	padding-top: 3vw;
+	padding-top: 10px;
 }
 div .question {
-	font-size: 2vw;
-	padding: 1vw;
+	font-size: 28px;
+	padding: 10px;
+	padding-bottom: 20px;
 }
 div .options, div .optionsShell {
-	font-size: 1.5vw;
+	font-size: 20px;
 }
 div .options div {
-	padding: 0.5vw;
+	padding: 5px;
 }
 div .scoresPeep {
-	font-size: 1.5vw;
+	font-size: 20px;
 }
 div .qsDiv {
 	width: 65%;
@@ -68,15 +69,19 @@ div .qsDiv {
 button {
 	font-family: chalktastic;
 	color: white;
-	font-size: 2vw;
+	font-size: 30px;
 	background: none;
+}
+button#submitbtn {
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 input[type=radio] {
   display: none;
 }
 
 label {
-	background-color: black;
+	/*background-color: black;*/
 	color: white;
 }
 label:hover {
@@ -121,64 +126,84 @@ div#optshell div#choiceDivNum4 div#choiceDivNum3 div#choiceDivNum2 div#choiceDiv
 }
 div#optshell div#choiceDivNum4 div#choiceDivNum3 div#choiceDivNum2 div#choiceDivNum1 div#choiceDivNum0:hover{
 	background-color: green;
-}
-*/
+}*/
+
 
 div#optshell div#choiceDivNum0 {
-	border-color: var(--color0);
-	background-color: var(--color0a);
 	border-style: solid;
 	width: fit-content;
 	justify-self: center;
-	border: 20px solid;
+	border: 13px solid;
   border-image-source: url("chalk_border_red.svg");
   border-image-repeat: repeat;
   border-image-slice: 38;
+  margin-bottom: 5px;
 }
 div#optshell div#choiceDivNum1 {
-	border-color: var(--color1);
-	background-color: var(--color1a);
 	border-style: solid;
 	width: fit-content;
 	justify-self: center;
-	border: 20px solid;
+	border: 13px solid;
   border-image-source: url("chalk_border_orange.svg");
   border-image-repeat: repeat;
   border-image-slice: 38;
 }
 div#optshell div#choiceDivNum2 {
-	border-color: var(--color2);
-	background-color: var(--color2a);
 	border-style: solid;
 	width: fit-content;
 	justify-self: center;
-	border: 20px solid;
+	border: 13px solid;
   border-image-source: url("chalk_border_yellow.svg");
   border-image-repeat: repeat;
   border-image-slice: 38;
 }
 div#optshell div#choiceDivNum3 {
-	border-color: var(--color3);
-	background-color: var(--color3a);
 	border-style: solid;
 	width: fit-content;
 	justify-self: center;
-	border: 20px solid;
+	border: 13px solid;
   border-image-source: url("chalk_border_green.svg");
   border-image-repeat: repeat;
   border-image-slice: 38;
 }
 div#optshell div#choiceDivNum4 {
-	border-color: var(--color4);
-	background-color: var(--color4a);
 	border-style: solid;
 	width: fit-content;
 	justify-self: center;
-	border: 20px solid;
+	border: 13px solid;
   border-image-source: url("chalk_border_blue.svg");
   border-image-repeat: repeat;
   border-image-slice: 38;
 }
+div#choiceWrapDiv0.optWrap {
+	background-color: var(--color0a);
+	padding: 20px;
+	padding-top: 10px;
+	padding-bottom: 13px;
+	margin: -10px;
+}
+div#choiceWrapDiv1.optWrap {
+	background-color: var(--color1a);
+	padding: 20px;
+	padding-bottom: 13px;
+	padding-top: 10px;
+	margin: -10px;
+}
 
 
-
+div#choiceDivNum0 {
+	border-style: solid;
+	width: fit-content;
+	justify-self: center;
+	border: 13px solid;
+  border-image-source: url("chalk_border_white.svg");
+  border-image-repeat: repeat;
+  border-image-slice: 38;
+  margin-bottom: 5px;
+  padding: 0px;
+}
+div#choiceWrapDiv0 {
+	padding: 0px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
