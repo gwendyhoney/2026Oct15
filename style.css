@@ -177,19 +177,46 @@ div#optshell div#choiceDivNum4 {
   border-image-repeat: repeat;
   border-image-slice: 38;
 }
-div#choiceWrapDiv0.optWrap {
-	background-color: var(--color0a);
+div#choiceWrapDiv0.optWrap, div#choiceWrapDiv1.optWrap, div#choiceWrapDiv2.optWrap, div#choiceWrapDiv3.optWrap, div#choiceWrapDiv4.optWrap {
 	padding: 20px;
 	padding-top: 10px;
 	padding-bottom: 13px;
 	margin: -10px;
 }
-div#choiceWrapDiv1.optWrap {
+/*div#choiceWrapDiv0.optWrap:hover {
+	background-color: var(--color0a);
+}
+div#choiceWrapDiv1.optWrap:hover {
 	background-color: var(--color1a);
-	padding: 20px;
-	padding-bottom: 13px;
-	padding-top: 10px;
-	margin: -10px;
+}
+div#choiceWrapDiv2.optWrap:hover {
+	background-color: var(--color2a);
+}
+div#choiceWrapDiv3.optWrap:hover {
+	background-color: var(--color3a);
+}
+div#choiceWrapDiv4.optWrap:hover {
+	background-color: var(--color4a);
+}*/
+
+div#choiceWrapDiv0.optWrap.active {
+	background-color: var(--color0a);
+}
+div#choiceWrapDiv1.optWrap.active {
+	background-color: var(--color1a);
+}
+div#choiceWrapDiv2.optWrap.active {
+	background-color: var(--color2a);
+}
+div#choiceWrapDiv3.optWrap.active {
+	background-color: var(--color3a);
+}
+div#choiceWrapDiv4.optWrap.active {
+	background-color: var(--color4a);
+}
+div#optshell div#choiceDivNum0.inactive, div#optshell div#choiceDivNum1.inactive, div#optshell div#choiceDivNum2.inactive, div#optshell div#choiceDivNum3.inactive, div#optshell div#choiceDivNum4.inactive {
+	border-color: rgba(0,0,0,0);
+	border-image-source: url("");
 }
 
 
