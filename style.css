@@ -53,9 +53,11 @@ div .question {
 }
 div .options, div .optionsShell {
 	font-size: 20px;
+	display: inline-block;
 }
 div .options div {
 	padding: 5px;
+	margin: auto;
 }
 div .scoresPeep {
 	font-size: 20px;
