@@ -527,43 +527,70 @@ function checkAns() {
     }
 }
 
+function printOneStat(currfixedDec, currId, currArr, preText, suffText, o1,o2,o3,o4,o5, statName) {
+	const scoreElement = document.getElementById(currId)
+	var currS = currArr.toFixed(currfixedDec)
+	switch (true) {
+		case (currS <= 10 && currS >= 6):
+			scoreElement.innerText = preText + o1 + suffText;
+			break;
+		case (currS < 6 && currS >= 2):
+			scoreElement.innerText = preText + o2 + suffText;
+			break;
+		case (currS < 2 && currS > -2):
+			scoreElement.innerText = preText + o3 + suffText;
+			break;
+		case (currS <= -2 && currS > -6):
+			scoreElement.innerText = preText + o4 + suffText;
+			break;
+		case (currS <= -6 && currS >= -10):
+			scoreElement.innerText = preText + o5 + suffText;
+			break;
+		default:
+			scoreElement.innerText = "ERROR! " + statName + " SCORE IS... " + currS;
+			break;
+	}
+	console.log(statName + "SCORE IS... " + currS);
+}
 function printStats() {
 	const fixedDec = 2;
-	const score0 = document.getElementById('score0')
-	score0.innerText = "CULTIVATION: " + cCultivation.toFixed(fixedDec);
-	const score1 = document.getElementById('score1')
-	score1.innerText = "PRODUCTION: " + cProduction.toFixed(fixedDec);
-	const score2 = document.getElementById('score2')
-	score2.innerText = "FUNCTION: " + cFunction.toFixed(fixedDec);
-	const score3 = document.getElementById('score3')
-	score3.innerText = "DIRECTION: " + cDirection.toFixed(fixedDec);
 
-	const score4 = document.getElementById('score4')
-	score4.innerText = "DREAMING: " + cDreaming.toFixed(fixedDec);
-	const score5 = document.getElementById('score5')
-	score5.innerText = "BEHAVING: " + cBehaving.toFixed(fixedDec);
-	const score6 = document.getElementById('score6')
-	score6.innerText = "STRIVING: " + cStriving.toFixed(fixedDec);
-	const score7 = document.getElementById('score7')
-	score7.innerText = "RISKING: " + cRisking.toFixed(fixedDec);
+	printOneStat(fixedDec, 'score0', cCultivation, 'SOCIETY IS...\n', ' us',
+		'AUTHORING', 'SHAPING','INTEGRATING','ACCOMPANYING','CONSTRAINING', 'CULTIVATION');
+	printOneStat(fixedDec, 'score1', cProduction, 'Run by ', '',
+		'SYSTEMS', 'INSTITUTING','ORGANIZATIONS','GROUPS','INDIVIDUALS', 'PRODUCTION');
+	printOneStat(fixedDec, 'score2', cFunction, '', ' in function',
+		'MECHANISTIC', 'CYBERNETIC','POLYCENTRIC','EMERGENT','INEXPLICABLE', 'FUNCTION');
+	printOneStat(fixedDec, 'score3', cDirection, '', '',
+		'ASCENDING', 'PROGRESSING','ENDURING','REGRESSING','DECLINING', 'DIRECTION');
 
-	const score8 = document.getElementById('score8')
-	score8.innerText = "COHERING: " + cCohering.toFixed(fixedDec);
-	const score9 = document.getElementById('score9')
-	score9.innerText = "RECRUITING: " + cRecruiting.toFixed(fixedDec);
-	const score10 = document.getElementById('score10')
-	score10.innerText = "PURSUING: " + cPursing.toFixed(fixedDec);
-	const score11 = document.getElementById('score11')
-	score11.innerText = "REVIEWING: " + cReviewing.toFixed(fixedDec);
 
-	const score12 = document.getElementById('score12')
-	score12.innerText = "MANDATE: " + cMandate.toFixed(fixedDec);
-	const score13 = document.getElementById('score13')
-	score13.innerText = "PROGRAM: " + cProgram.toFixed(fixedDec);
-	const score14 = document.getElementById('score14')
-	score14.innerText = "TIME: " + cTime.toFixed(fixedDec);
-	const score15 = document.getElementById('score15')
-	score15.innerText = "SPACE: " + cSpace.toFixed(fixedDec);
+	printOneStat(fixedDec, 'score4', cDreaming, 'WE SHOULD BE...\nAssuming the status quo is ', '',
+		'CONSTRUCTED', 'CONTROLLED','CONTESTED','CONVENTIONAL','CONVERGENT', 'DREAMING');
+	printOneStat(fixedDec, 'score5', cBehaving, '', ' in treating others',
+		'FORMAL', 'POLITE','SENSIBLE','CASUAL','CAREFREE', 'BEHAVING');
+	printOneStat(fixedDec, 'score6', cStriving, '', ' our efforts',
+		'MAXIMIZING', 'ESCALATING','OPTIMIZING','DECOMPRESSING','MINIMIZING', 'STRIVING');
+	printOneStat(fixedDec, 'score7', cRisking, '', ' unexpected change',
+		'UNLEASHING', 'ENCOURAGING','MANAGING','RESTRICTING','SUPPRESSING', 'RISKING');
+
+	printOneStat(fixedDec, 'score8', cCohering, 'MY MOVEMENT SHOULD BE...\nEmbracing ', '',
+		'DIVERSITY', 'INTEGRATION','ASSIMILATION','UNIFORMITY','PURITY', 'COHERING');
+	printOneStat(fixedDec, 'score9', cRecruiting, '', '  membership and values',
+		'OFFERING', 'ENGAGING','CONVINCING','CONVERTING','INSTILLING', 'RECRUITING');
+	printOneStat(fixedDec, 'score10', cPursing, 'Calling to change ', '',
+		'EVERYTHING', 'MORE AND MORE','LOTS','SOME','LITTLE', 'PURSUING');
+	printOneStat(fixedDec, 'score11', cReviewing, 'Treating its values as ', '',
+		'GUIDANCES', 'LAWS','CONSTITUTIONAL','CENTRAL','SACRED', 'REVIEWING');
+
+	printOneStat(fixedDec, 'score12', cMandate, 'LEADERS SHOULD BE...\n', ' the public',
+		'SERVING', 'WORKING WITH','CONSULTING','TEACHING','RULING', 'MANDATE');
+	printOneStat(fixedDec, 'score13', cProgram, '', ' good values',
+		'PREACHING', 'PROMOTING','TEACHING','PUSHING','ENGINEERING', 'PROGRAM');
+	printOneStat(fixedDec, 'score14', cTime, 'Focusing on the next ', '',
+		'DAY', 'MONTH','YEAR','DECADE','CENTURY', 'TIME');
+	printOneStat(fixedDec, 'score15', cSpace, 'Representing ', ' interests',
+		'LOCAL', 'REGIONAL','NATIONAL','COLLECTIVE','UNIVERSAL', 'SPACE');
 }
 
 function randQs() {
