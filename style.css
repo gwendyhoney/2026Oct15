@@ -62,6 +62,9 @@ div .options div {
 div .scoresPeep {
 	font-size: 20px;
 }
+div#scores_info_border button {
+	font-size: 20px;
+}
 div .qsDiv {
 	width: 65%;
 	text-align: center;
