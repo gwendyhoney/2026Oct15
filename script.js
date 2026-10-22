@@ -53,14 +53,14 @@ let makeRand = 1;
 let allAns = [];
 let allPickedAns = [];
 
-let unclicked = true;
-
 function loadQues() {
 	if (currQ == 0) {
 		document.getElementById("backbtn").innerText = "Quit & Return to Home";
 	} else {
 		document.getElementById("backbtn").innerText = "Back";
 	}
+
+	var unclicked = true;
 
 	const qNum = document.getElementById('qNum')
 	const ques = document.getElementById("ques");
