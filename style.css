@@ -83,19 +83,13 @@ input[type=radio] {
 }
 
 label {
-	/*background-color: black;*/
 	color: white;
 	z-index: 80;
 }
 label:hover {
 	cursor: pointer;
-	background-color: gray;
-}
-label:active {
-	background-color: blue;
 }
 input[type='radio']:checked + label {
-	background-color: blue;
 }
 
 
@@ -184,21 +178,6 @@ div#choiceWrapDiv0.optWrap, div#choiceWrapDiv1.optWrap, div#choiceWrapDiv2.optWr
 	padding-bottom: 13px;
 	margin: -10px;
 }
-/*div#choiceWrapDiv0.optWrap:hover {
-	background-color: var(--color0a);
-}
-div#choiceWrapDiv1.optWrap:hover {
-	background-color: var(--color1a);
-}
-div#choiceWrapDiv2.optWrap:hover {
-	background-color: var(--color2a);
-}
-div#choiceWrapDiv3.optWrap:hover {
-	background-color: var(--color3a);
-}
-div#choiceWrapDiv4.optWrap:hover {
-	background-color: var(--color4a);
-}*/
 
 div#choiceWrapDiv0.optWrap.active {
 	background-color: var(--color0a);
@@ -236,7 +215,7 @@ div#optshell div#choiceDivNum0.inactive, div#optshell div#choiceDivNum1.inactive
 }
 
 
-div#choiceDivNum0 {
+div#choiceDivNum0, div#choiceDivNum1, div#choiceDivNum2, div#choiceDivNum3, div#choiceDivNum4 {
 	border-style: solid;
 	width: fit-content;
 	justify-self: center;
@@ -247,8 +226,31 @@ div#choiceDivNum0 {
   margin-bottom: 5px;
   padding: 0px;
 }
-div#choiceWrapDiv0 {
-	padding: 0px;
-	padding-left: 5px;
-	padding-right: 5px;
+div#choiceWrapDiv0, div#choiceWrapDiv1, div#choiceWrapDiv2, div#choiceWrapDiv3, div#choiceWrapDiv4 {
+	padding: 8px;
+	padding-left: 8px;
+	padding-right: 8px;
+	margin: -11px;
+}
+div#choiceWrapDiv0.hoverable:hover,
+div#choiceWrapDiv1.hoverable:hover,
+div#choiceWrapDiv2.hoverable:hover,
+div#choiceWrapDiv3.hoverable:hover, 
+div#choiceWrapDiv4.hoverable:hover {
+	background-color: rgba(255,255,255,0.38);
+}
+div#opt div#choiceDivNum0 div#choiceWrapDiv0.active,
+div#opt div#choiceDivNum1 div#choiceWrapDiv1.active,
+div#opt div#choiceDivNum2 div#choiceWrapDiv2.active,
+div#opt div#choiceDivNum3 div#choiceWrapDiv3.active,
+div#opt div#choiceDivNum4 div#choiceWrapDiv4.active {
+	background-color: rgba(255,255,255,0.38);
+}
+div#opt div#choiceDivNum0.inactive,
+div#opt div#choiceDivNum1.inactive,
+div#opt div#choiceDivNum2.inactive,
+div#opt div#choiceDivNum3.inactive,
+div#opt div#choiceDivNum4.inactive {
+	border-color: rgba(0,0,0,0);
+	border-image-source: url("");
 }

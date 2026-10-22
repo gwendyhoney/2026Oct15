@@ -116,6 +116,7 @@ function loadQues() {
 					document.getElementById("choiceDivNum" + i).classList.add('inactive');
 				}
 				document.querySelector('label[for="choiceNum'+i+'"]').style.opacity = "1";
+				document.getElementById("choiceDivNum" + i).classList.remove('transparency');
 			}
 			unclicked = false;
 		}
@@ -130,6 +131,7 @@ function loadQues() {
 					document.getElementById("choiceDivNum" + i).classList.add('inactive');
 				}
 				document.querySelector('label[for="choiceNum'+i+'"]').style.opacity = "1";
+				document.getElementById("choiceDivNum" + i).classList.remove('transparency');
 			}
 			unclicked = false;
 		}
@@ -144,6 +146,7 @@ function loadQues() {
 					document.getElementById("choiceDivNum" + i).classList.add('inactive');
 				}
 				document.querySelector('label[for="choiceNum'+i+'"]').style.opacity = "1";
+				document.getElementById("choiceDivNum" + i).classList.remove('transparency');
 			}
 			unclicked = false;
 		}
@@ -158,6 +161,7 @@ function loadQues() {
 					document.getElementById("choiceDivNum" + i).classList.add('inactive');
 				}
 				document.querySelector('label[for="choiceNum'+i+'"]').style.opacity = "1";
+				document.getElementById("choiceDivNum" + i).classList.remove('transparency');
 			}
 			unclicked = false;
 		}
@@ -172,6 +176,7 @@ function loadQues() {
 					document.getElementById("choiceDivNum" + i).classList.add('inactive');
 				}
 				document.querySelector('label[for="choiceNum'+i+'"]').style.opacity = "1";
+				document.getElementById("choiceDivNum" + i).classList.remove('transparency');
 			}
 			unclicked = false;
 		}
@@ -298,6 +303,92 @@ function loadQues() {
 		}
 
 		opt.innerHTML = "";
+	} else {
+		document.getElementById("choiceNum0").onclick = function() {
+			document.getElementById("choiceDivNum0").classList.add('active');
+			document.getElementById("choiceDivNum0").classList.remove('inactive');
+			document.getElementById("choiceWrapDiv0").classList.add('active');
+			for (var i = 0; i < csList[currQ].length; i++) {
+				if (i != 0) {
+					document.getElementById("choiceDivNum" + i).classList.remove('active');
+					document.getElementById("choiceWrapDiv" + i).classList.remove('active');
+					document.getElementById("choiceDivNum" + i).classList.add('inactive');
+				}
+			}
+			unclicked = false;
+			for (var i = 0; i < csList[currQ].length; i++) {
+				document.getElementById("choiceWrapDiv" + i).classList.remove('hoverable');
+			}
+		}
+		document.getElementById("choiceNum1").onclick = function() {
+			document.getElementById("choiceDivNum1").classList.add('active');
+			document.getElementById("choiceDivNum1").classList.remove('inactive');
+			document.getElementById("choiceWrapDiv1").classList.add('active');
+			for (var i = 0; i < csList[currQ].length; i++) {
+				if (i != 1) {
+					document.getElementById("choiceDivNum" + i).classList.remove('active');
+					document.getElementById("choiceWrapDiv" + i).classList.remove('active');
+					document.getElementById("choiceDivNum" + i).classList.add('inactive');
+				}
+			}
+			unclicked = false;
+			for (var i = 0; i < csList[currQ].length; i++) {
+				document.getElementById("choiceWrapDiv" + i).classList.remove('hoverable');
+			}
+		}
+		document.getElementById("choiceNum2").onclick = function() {
+			document.getElementById("choiceDivNum2").classList.add('active');
+			document.getElementById("choiceDivNum2").classList.remove('inactive');
+			document.getElementById("choiceWrapDiv2").classList.add('active');
+			for (var i = 0; i < csList[currQ].length; i++) {
+				if (i != 2) {
+					document.getElementById("choiceDivNum" + i).classList.remove('active');
+					document.getElementById("choiceWrapDiv" + i).classList.remove('active');
+					document.getElementById("choiceDivNum" + i).classList.add('inactive');
+				}
+			}
+			unclicked = false;
+			for (var i = 0; i < csList[currQ].length; i++) {
+				document.getElementById("choiceWrapDiv" + i).classList.remove('hoverable');
+			}
+		}
+		document.getElementById("choiceNum3").onclick = function() {
+			document.getElementById("choiceDivNum3").classList.add('active');
+			document.getElementById("choiceDivNum3").classList.remove('inactive');
+			document.getElementById("choiceWrapDiv3").classList.add('active');
+			for (var i = 0; i < csList[currQ].length; i++) {
+				if (i != 3) {
+					document.getElementById("choiceDivNum" + i).classList.remove('active');
+					document.getElementById("choiceWrapDiv" + i).classList.remove('active');
+					document.getElementById("choiceDivNum" + i).classList.add('inactive');
+				}
+			}
+			unclicked = false;
+			for (var i = 0; i < csList[currQ].length; i++) {
+				document.getElementById("choiceWrapDiv" + i).classList.remove('hoverable');
+			}
+		}
+		document.getElementById("choiceNum4").onclick = function() {
+			document.getElementById("choiceDivNum4").classList.add('active');
+			document.getElementById("choiceDivNum4").classList.remove('inactive');
+			document.getElementById("choiceWrapDiv4").classList.add('active');
+			for (var i = 0; i < csList[currQ].length; i++) {
+				if (i != 4) {
+					document.getElementById("choiceDivNum" + i).classList.remove('active');
+					document.getElementById("choiceWrapDiv" + i).classList.remove('active');
+					document.getElementById("choiceDivNum" + i).classList.add('inactive');
+				}
+			}
+			unclicked = false;
+			for (var i = 0; i < csList[currQ].length; i++) {
+				document.getElementById("choiceWrapDiv" + i).classList.remove('hoverable');
+			}
+		}
+		if (unclicked) {
+			for (var i = 0; i < csList[currQ].length; i++) {
+				document.getElementById("choiceWrapDiv" + i).classList.add('hoverable');
+			}
+		} 
 	}
 
 	if (currQ >= 0 && currQ < allPickedAns.length) {
