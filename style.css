@@ -85,6 +85,7 @@ input[type=radio] {
 label {
 	/*background-color: black;*/
 	color: white;
+	z-index: 80;
 }
 label:hover {
 	cursor: pointer;
@@ -213,6 +214,21 @@ div#choiceWrapDiv3.optWrap.active {
 }
 div#choiceWrapDiv4.optWrap.active {
 	background-color: var(--color4a);
+}
+div#optshell div#choiceDivNum0.transparency {
+	border-image-source: url("chalk_border_red_a50.svg");
+}
+div#optshell div#choiceDivNum1.transparency {
+	border-image-source: url("chalk_border_orange_a50.svg");
+}
+div#optshell div#choiceDivNum2.transparency {
+	border-image-source: url("chalk_border_yellow_a50.svg");
+}
+div#optshell div#choiceDivNum3.transparency {
+	border-image-source: url("chalk_border_green_a50.svg");
+}
+div#optshell div#choiceDivNum4.transparency {
+	border-image-source: url("chalk_border_blue_a50.svg");
 }
 div#optshell div#choiceDivNum0.inactive, div#optshell div#choiceDivNum1.inactive, div#optshell div#choiceDivNum2.inactive, div#optshell div#choiceDivNum3.inactive, div#optshell div#choiceDivNum4.inactive {
 	border-color: rgba(0,0,0,0);

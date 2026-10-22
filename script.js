@@ -1,3 +1,15 @@
+const color0 = "#FF5D5B";
+const color0a = "#FF5D5B66";
+const color1 = "#FF7F00";
+const color1a = "#FF7F0066";
+const color2 = "#F6F243";
+const color2a = "#F6F24366";
+const color3 = "#51D347";
+const color3a = "#51D34766";
+const color4 = "#78A5E3";
+const color4a = "#78A5E366";
+
+
 let shellsList = shellsListP;
 let qs = qsP;
 let csList = csListP;
@@ -39,8 +51,17 @@ let cSpace = 0;
 let makeRand = 1;
 
 let allAns = [];
+let allPickedAns = [];
+
+let unclicked = true;
 
 function loadQues() {
+	if (currQ == 0) {
+		document.getElementById("backbtn").innerText = "Quit & Return to Home";
+	} else {
+		document.getElementById("backbtn").innerText = "Back";
+	}
+
 	const qNum = document.getElementById('qNum')
 	const ques = document.getElementById("ques");
 	const opt = document.getElementById("opt");
@@ -79,11 +100,10 @@ function loadQues() {
 		optshell.append(document.getElementById("choiceDivNum4"));
 		document.getElementById("choiceWrapDiv4").classList.add("optWrap")
 		for (var i = csList[currQ].length - 1; i > 0; i--) {
-			console.log(i);
 			document.getElementById("choiceWrapDiv" + i).prepend(document.getElementById("choiceDivNum" + (i - 1)));
 			document.getElementById("choiceWrapDiv" + i).classList.add("optWrap")
 		}
-		document.getElementById("choiceWrapDiv0").classList.add("optWrap")
+		document.getElementById("choiceWrapDiv0").classList.add("optWrap");
 
 		document.getElementById("choiceNum0").onclick = function() {
 			document.getElementById("choiceDivNum0").classList.add('active');
@@ -95,8 +115,9 @@ function loadQues() {
 					document.getElementById("choiceWrapDiv" + i).classList.remove('active');
 					document.getElementById("choiceDivNum" + i).classList.add('inactive');
 				}
+				document.querySelector('label[for="choiceNum'+i+'"]').style.opacity = "1";
 			}
-
+			unclicked = false;
 		}
 		document.getElementById("choiceNum1").onclick = function() {
     		document.getElementById("choiceDivNum1").classList.add('active');
@@ -108,7 +129,9 @@ function loadQues() {
 					document.getElementById("choiceWrapDiv" + i).classList.remove('active');
 					document.getElementById("choiceDivNum" + i).classList.add('inactive');
 				}
+				document.querySelector('label[for="choiceNum'+i+'"]').style.opacity = "1";
 			}
+			unclicked = false;
 		}
 		document.getElementById("choiceNum2").onclick = function() {
     		document.getElementById("choiceDivNum2").classList.add('active');
@@ -120,7 +143,9 @@ function loadQues() {
 					document.getElementById("choiceWrapDiv" + i).classList.remove('active');
 					document.getElementById("choiceDivNum" + i).classList.add('inactive');
 				}
+				document.querySelector('label[for="choiceNum'+i+'"]').style.opacity = "1";
 			}
+			unclicked = false;
 		}
 		document.getElementById("choiceNum3").onclick = function() {
     		document.getElementById("choiceDivNum3").classList.add('active');
@@ -132,7 +157,9 @@ function loadQues() {
 					document.getElementById("choiceWrapDiv" + i).classList.remove('active');
 					document.getElementById("choiceDivNum" + i).classList.add('inactive');
 				}
+				document.querySelector('label[for="choiceNum'+i+'"]').style.opacity = "1";
 			}
+			unclicked = false;
 		}
 		document.getElementById("choiceNum4").onclick = function() {
     		document.getElementById("choiceDivNum4").classList.add('active');
@@ -144,11 +171,140 @@ function loadQues() {
 					document.getElementById("choiceWrapDiv" + i).classList.remove('active');
 					document.getElementById("choiceDivNum" + i).classList.add('inactive');
 				}
+				document.querySelector('label[for="choiceNum'+i+'"]').style.opacity = "1";
 			}
+			unclicked = false;
+		}
+
+		document.querySelector('label[for="choiceNum0"]').onmouseenter = function() {
+			if (unclicked) {
+				document.getElementById("choiceDivNum1").classList.add('transparency');
+				document.getElementById("choiceDivNum2").classList.add('transparency');
+				document.getElementById("choiceDivNum3").classList.add('transparency');
+				document.getElementById("choiceDivNum4").classList.add('transparency');
+				document.querySelector('label[for="choiceNum1"]').style.opacity = "0.3";
+				document.querySelector('label[for="choiceNum2"]').style.opacity = "0.3";
+				document.querySelector('label[for="choiceNum3"]').style.opacity = "0.3";
+				document.querySelector('label[for="choiceNum4"]').style.opacity = "0.3";
+			} 
+		}
+		document.querySelector('label[for="choiceNum0"]').onmouseleave = function() {
+			if (unclicked) {
+				document.getElementById("choiceDivNum1").classList.remove('transparency');
+				document.getElementById("choiceDivNum2").classList.remove('transparency');
+				document.getElementById("choiceDivNum3").classList.remove('transparency');
+				document.getElementById("choiceDivNum4").classList.remove('transparency');
+				document.querySelector('label[for="choiceNum1"]').style.opacity = "1";
+				document.querySelector('label[for="choiceNum2"]').style.opacity = "1";
+				document.querySelector('label[for="choiceNum3"]').style.opacity = "1";
+				document.querySelector('label[for="choiceNum4"]').style.opacity = "1";
+			} 
+		}
+		document.querySelector('label[for="choiceNum1"]').onmouseenter = function() {
+			if (unclicked) {
+				document.getElementById("choiceDivNum0").classList.add('transparency');
+				document.getElementById("choiceDivNum2").classList.add('transparency');
+				document.getElementById("choiceDivNum3").classList.add('transparency');
+				document.getElementById("choiceDivNum4").classList.add('transparency');
+				document.querySelector('label[for="choiceNum0"]').style.opacity = "0.3";
+				document.querySelector('label[for="choiceNum2"]').style.opacity = "0.3";
+				document.querySelector('label[for="choiceNum3"]').style.opacity = "0.3";
+				document.querySelector('label[for="choiceNum4"]').style.opacity = "0.3";
+			} 
+		}
+		document.querySelector('label[for="choiceNum1"]').onmouseleave = function() {
+			if (unclicked) {
+				document.getElementById("choiceDivNum0").classList.remove('transparency');
+				document.getElementById("choiceDivNum2").classList.remove('transparency');
+				document.getElementById("choiceDivNum3").classList.remove('transparency');
+				document.getElementById("choiceDivNum4").classList.remove('transparency');
+				document.querySelector('label[for="choiceNum0"]').style.opacity = "1";
+				document.querySelector('label[for="choiceNum2"]').style.opacity = "1";
+				document.querySelector('label[for="choiceNum3"]').style.opacity = "1";
+				document.querySelector('label[for="choiceNum4"]').style.opacity = "1";
+			} 
+		}
+		document.querySelector('label[for="choiceNum2"]').onmouseenter = function() {
+			if (unclicked) {
+				document.getElementById("choiceDivNum0").classList.add('transparency');
+				document.getElementById("choiceDivNum1").classList.add('transparency');
+				document.getElementById("choiceDivNum3").classList.add('transparency');
+				document.getElementById("choiceDivNum4").classList.add('transparency');
+				document.querySelector('label[for="choiceNum0"]').style.opacity = "0.3";
+				document.querySelector('label[for="choiceNum1"]').style.opacity = "0.3";
+				document.querySelector('label[for="choiceNum3"]').style.opacity = "0.3";
+				document.querySelector('label[for="choiceNum4"]').style.opacity = "0.3";
+			} 
+		}
+		document.querySelector('label[for="choiceNum2"]').onmouseleave = function() {
+			if (unclicked) {
+				document.getElementById("choiceDivNum0").classList.remove('transparency');
+				document.getElementById("choiceDivNum1").classList.remove('transparency');
+				document.getElementById("choiceDivNum3").classList.remove('transparency');
+				document.getElementById("choiceDivNum4").classList.remove('transparency');
+				document.querySelector('label[for="choiceNum0"]').style.opacity = "1";
+				document.querySelector('label[for="choiceNum1"]').style.opacity = "1";
+				document.querySelector('label[for="choiceNum3"]').style.opacity = "1";
+				document.querySelector('label[for="choiceNum4"]').style.opacity = "1";
+			} 
+		}
+		document.querySelector('label[for="choiceNum3"]').onmouseenter = function() {
+			if (unclicked) {
+				document.getElementById("choiceDivNum0").classList.add('transparency');
+				document.getElementById("choiceDivNum1").classList.add('transparency');
+				document.getElementById("choiceDivNum2").classList.add('transparency');
+				document.getElementById("choiceDivNum4").classList.add('transparency');
+				document.querySelector('label[for="choiceNum0"]').style.opacity = "0.3";
+				document.querySelector('label[for="choiceNum1"]').style.opacity = "0.3";
+				document.querySelector('label[for="choiceNum2"]').style.opacity = "0.3";
+				document.querySelector('label[for="choiceNum4"]').style.opacity = "0.3";
+			} 
+		}
+		document.querySelector('label[for="choiceNum3"]').onmouseleave = function() {
+			if (unclicked) {
+				document.getElementById("choiceDivNum0").classList.remove('transparency');
+				document.getElementById("choiceDivNum1").classList.remove('transparency');
+				document.getElementById("choiceDivNum2").classList.remove('transparency');
+				document.getElementById("choiceDivNum4").classList.remove('transparency');
+				document.querySelector('label[for="choiceNum0"]').style.opacity = "1";
+				document.querySelector('label[for="choiceNum1"]').style.opacity = "1";
+				document.querySelector('label[for="choiceNum2"]').style.opacity = "1";
+				document.querySelector('label[for="choiceNum4"]').style.opacity = "1";
+			} 
+		}
+		document.querySelector('label[for="choiceNum4"]').onmouseenter = function() {
+			if (unclicked) {
+				document.getElementById("choiceDivNum0").classList.add('transparency');
+				document.getElementById("choiceDivNum1").classList.add('transparency');
+				document.getElementById("choiceDivNum2").classList.add('transparency');
+				document.getElementById("choiceDivNum3").classList.add('transparency');
+				document.querySelector('label[for="choiceNum0"]').style.opacity = "0.3";
+				document.querySelector('label[for="choiceNum1"]').style.opacity = "0.3";
+				document.querySelector('label[for="choiceNum2"]').style.opacity = "0.3";
+				document.querySelector('label[for="choiceNum3"]').style.opacity = "0.3";
+			} 
+		}
+		document.querySelector('label[for="choiceNum4"]').onmouseleave = function() {
+			if (unclicked) {
+				document.getElementById("choiceDivNum0").classList.remove('transparency');
+				document.getElementById("choiceDivNum1").classList.remove('transparency');
+				document.getElementById("choiceDivNum2").classList.remove('transparency');
+				document.getElementById("choiceDivNum3").classList.remove('transparency');
+				document.querySelector('label[for="choiceNum0"]').style.opacity = "1";
+				document.querySelector('label[for="choiceNum1"]').style.opacity = "1";
+				document.querySelector('label[for="choiceNum2"]').style.opacity = "1";
+				document.querySelector('label[for="choiceNum3"]').style.opacity = "1";
+			} 
 		}
 
 		opt.innerHTML = "";
 	}
+
+	if (currQ >= 0 && currQ < allPickedAns.length) {
+	    console.log("Index exists!");
+	    document.querySelector('label[for="'+allPickedAns[currQ].id+'"]').click();
+	}
+
 }
 function shuffle(array) {
     var i = array.length,
@@ -175,6 +331,7 @@ function startQuiz() {
 	document.getElementById("startRandbtn").remove();
 	document.getElementById("submitbtn").style.display="inline-block";
 	document.getElementById("backbtn").style.display="inline-block";
+	document.getElementById("backbtn").innerText = "Quit & Return to Home"
 }
 function startQuizRandver() {
 	randQs();
@@ -269,6 +426,7 @@ function checkAns() {
 				Number(wTime[currQ][ansIndex]),
 				Number(wSpace[currQ][ansIndex])];
 		allAns.push(tempAns);
+		allPickedAns[currQ] = selectedAns;
 
 		printStats();
         nextQuestion();
