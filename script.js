@@ -393,8 +393,12 @@ function loadQues() {
 
 	if (currQ >= 0 && currQ < allPickedAns.length) {
 	    console.log("Index exists!");
-	    document.querySelector('label[for="'+allPickedAns[currQ].id+'"]').click();
+	    if ((allPickedAns[currQ].id == "choiceNum0") || (allPickedAns[currQ].id == "choiceNum1") || (allPickedAns[currQ].id == "choiceNum2") || (allPickedAns[currQ].id == "choiceNum3") || (allPickedAns[currQ].id == "choiceNum4")) {
+	    	document.querySelector('label[for="'+allPickedAns[currQ].id+'"]').click();
+		}
 	}
+
+	
 
 }
 function shuffle(array) {
@@ -422,7 +426,8 @@ function startQuiz() {
 	document.getElementById("startRandbtn").remove();
 	document.getElementById("submitbtn").style.display="inline-block";
 	document.getElementById("backbtn").style.display="inline-block";
-	document.getElementById("backbtn").innerText = "Quit & Return to Home"
+	document.getElementById("backbtn").innerText = "Quit & Return to Home";
+	document.getElementById("scoresPeep").style.display="inline-block";
 }
 function startQuizRandver() {
 	randQs();
@@ -431,6 +436,8 @@ function startQuizRandver() {
 	document.getElementById("startRandbtn").remove();
 	document.getElementById("submitbtn").style.display="inline-block";
 	document.getElementById("backbtn").style.display="inline-block";
+	document.getElementById("backbtn").innerText = "Quit & Return to Home";
+	document.getElementById("scoresPeep").style.display="inline-block";
 }
 
 function nextQuestion() {
@@ -446,6 +453,7 @@ function nextQuestion() {
         document.getElementById("submitbtn").remove();
         document.getElementById("backbtn").remove();
         document.getElementById("qNum").remove();
+        document.getElementById("scoresPeep").remove();
         const resPg = document.getElementById("resPg");
         resPg.innerHTML = "<h1>Results:</h1>";
     }
@@ -558,9 +566,9 @@ function printStats() {
 	printOneStat(fixedDec, 'score0', cCultivation, 'SOCIETY IS...\n', ' us',
 		'AUTHORING', 'SHAPING','INTEGRATING','ACCOMPANYING','CONSTRAINING', 'CULTIVATION');
 	printOneStat(fixedDec, 'score1', cProduction, 'Run by ', '',
-		'SYSTEMS', 'INSTITUTING','ORGANIZATIONS','GROUPS','INDIVIDUALS', 'PRODUCTION');
+		'SYSTEMS', 'INSTITUTIONS','ORGANIZATIONS','GROUPS','INDIVIDUALS', 'PRODUCTION');
 	printOneStat(fixedDec, 'score2', cFunction, '', ' in function',
-		'MECHANISTIC', 'CYBERNETIC','POLYCENTRIC','EMERGENT','INEXPLICABLE', 'FUNCTION');
+		'MECHANICAL', 'ORGANIC','EMERGENT','CHAOTIC','MIRACULOUS', 'FUNCTION');
 	printOneStat(fixedDec, 'score3', cDirection, '', '',
 		'ASCENDING', 'PROGRESSING','ENDURING','REGRESSING','DECLINING', 'DIRECTION');
 
@@ -568,7 +576,7 @@ function printStats() {
 	printOneStat(fixedDec, 'score4', cDreaming, 'WE SHOULD BE...\nAssuming the status quo is ', '',
 		'CONSTRUCTED', 'CONTROLLED','CONTESTED','CONVENTIONAL','CONVERGENT', 'DREAMING');
 	printOneStat(fixedDec, 'score5', cBehaving, '', ' in treating others',
-		'FORMAL', 'POLITE','SENSIBLE','CASUAL','CAREFREE', 'BEHAVING');
+		'DIRECT', 'CANDID','TACTFUL','PERCEPTIVE','ATTUNED', 'BEHAVING');
 	printOneStat(fixedDec, 'score6', cStriving, '', ' our efforts',
 		'MAXIMIZING', 'ESCALATING','OPTIMIZING','DECOMPRESSING','MINIMIZING', 'STRIVING');
 	printOneStat(fixedDec, 'score7', cRisking, '', ' unexpected change',
@@ -637,4 +645,14 @@ function reorderArrayByIndexes(originalArray, indexesArray) {
     	tempArr.push(originalArray[indexesArray[i]])
     }
     return tempArr;
+}
+
+function togglePeepScores() {
+	var currDisplay = document.getElementById('scoresPeepScores').style.display;
+	if (currDisplay=="none") {
+		document.getElementById('scoresPeepScores').style.display = "inline-block";
+		printStats();
+	} else {
+		document.getElementById('scoresPeepScores').style.display = "none";
+	}
 }
